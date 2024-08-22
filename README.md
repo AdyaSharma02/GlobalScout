@@ -12,9 +12,13 @@ Efficient Data Handling: Optimized backend to manage large datasets and queries.
 
 # Tech Stack
 Frontend: HTML5, CSS3, JavaScript, Bootstrap 
+
 Backend:  Node.js, Express.js
+
 Database: MySQL
+
 APIs: RESTful APIs for seamless integration
+
 Version Control: Git and GitHub for source code management
 
 # Getting Started
