@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Global Scout</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles/styleContact.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/contact" style="font-size: 46px; font-weight: bold;"><i>Global Scout</i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/index2"><i class="bi bi-house"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="/about"><i class="bi bi-person"></i> About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/feedback"><i class="bi bi-chat-dots"></i> Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/account"><i class="bi bi-gear"></i> Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<div class="contact-section">
+    <div class="contact-info">
+        <h4>Contact Information</h4>
+        <p><i class="bi bi-geo-alt-fill"></i> 1234 Street Name, City, Country</p>
+        <p><i class="bi bi-telephone-fill"></i> +123 456 7890</p>
+        <p><i class="bi bi-envelope-fill"></i> contact@globalscout.com</p>
+        <p><i class="bi bi-clock-fill"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+    </div>
+    <div class="contact-form-container">
+        <div class="contact-form">
+            <h4>Send Us a Message</h4>
+            <form action="/contact-submit" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <i class="bi bi-person form-icon"></i>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" value="<%= username %>" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <i class="bi bi-envelope form-icon"></i>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" value="<%= email %>" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <i class="bi bi-pencil form-icon"></i>
+                    <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row map-container">
+        <div class="col-12">
+            <h4>Our Location</h4>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.908183417191!2d-122.39927908468112!3d37.79216577975699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858083a875b38d%3A0x9d35cb5191b8912e!2s1%20Market%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1604344827950!5m2!1sen!2sus" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="footer" class="footer mt-auto py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <hr class="mt-4 w-100">
+            <div class="col-12 text-center">
+                <span class="text-muted">GLOBAL SCOUT &copy; 2024. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
