@@ -30,8 +30,11 @@ MySQL server installed and running
 
 # Installation
 Clone the repository:
+
 git clone https://github.com/AdyaSharma02/GlobalScout.git
+
 cd GlobalScout
+
 Install the dependencies:
 npm install
 
