@@ -1,0 +1,172 @@
+/* General Body Styles */
+body {
+    background: url('path/to/your/background-image.jpg') no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    background-blend-mode: multiply;
+    animation: slide-background 20s linear infinite, fadeIn 2s ease-out;
+    text-transform: uppercase; /* Make all text uppercase */
+    animation: slideIn 1s ease-out; /* Add slideIn animation to body */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Styles */
+.about-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.about-header img {
+    width: 100%;
+    height: auto;
+    filter: blur(1px); /* Slight blur for depth effect */
+}
+
+.about-header h1 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(50px); /* 3D Translation */
+    font-size: 5rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for 3D effect */
+}
+
+/* Section Styles */
+section#about .box {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* Make text uppercase */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+}
+
+section#about .box:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg); /* Added 3D rotation */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Footer Styles */
+.footer {
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    animation: fadeIn 2s ease-out;
+    text-transform: uppercase; /* Make text uppercase */
+    text-align: center; /* Center the text */
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Slightly larger font size */
+    font-weight: 600; /* Make text bolder */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #007bff;
+    text-transform: uppercase; /* Make text uppercase */
+    font-weight: 500; /* Slightly bolder text */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer hr {
+    border-top: 2px solid #ddd; /* Make the horizontal line more prominent */
+    margin: 1rem 0; /* Add some margin */
+}
+
+.footer .social-icons a {
+    color: #007bff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+#footer {
+    position: relative;
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 20px 0; /* Padding for better spacing */
+    text-transform: uppercase; /* Make text uppercase */
+}
+
+#footer .text-muted {
+    font-size: 16px; /* Increase font size */
+    font-weight: 500; /* Slightly bolder text */
+    text-transform: uppercase; /* Make text uppercase */
+}
+
+#footer hr {
+    border-top: 2px solid #dee2e6; /* Make the horizontal line more prominent */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonHover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Sign-Up Modal Styles */
+#signupModal .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+    transform: translateZ(20px); /* 3D Translation */
+}
+
+#signupModal .modal-header {
+    border-bottom: none;
+}
+
+#signupModal .modal-body {
+    padding: 20px;
+}
+
+#signupModal .form-group label {
+    font-weight: bold;
+    text-transform: none; /* Remove uppercase transform for labels */
+}
+
+#signupModal .form-control {
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
+}

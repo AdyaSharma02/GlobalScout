@@ -1,0 +1,258 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-transform: uppercase;
+    overflow-x: hidden;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+/* Contact Section Styles */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    background: #f9f9f9;
+    flex: 1;
+}
+
+.contact-info {
+    background: linear-gradient(to right, #f9f9f9, #fff);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+    margin-bottom: 30px; /* Space between contact info and form */
+    transform: translateZ(20px); /* 3D Translation */
+}
+
+.contact-info h4 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Contact Form Container Styles */
+.contact-form-container {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width to make the form shorter */
+    background: #fff;
+    padding: 20px; /* Reduced padding for a shorter form */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+    animation: fadeInUp 1s ease-in-out;
+    transform: translateZ(20px); /* 3D Translation */
+}
+
+/* Contact Form Styles */
+.contact-form {
+    width: 100%;
+}
+
+.contact-form h4 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px; /* Adjust space between form elements */
+    position: relative;
+}
+
+.contact-form .form-group label {
+    font-weight: bold;
+}
+
+.contact-form .form-group input, 
+.contact-form .form-group textarea {
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 100%; /* Ensure inputs don’t exceed container width */
+    width: 100%; /* Ensure full width within the container */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
+}
+
+.contact-form button {
+    padding: 10px 20px; /* Adjust button padding for a shorter form */
+    font-size: 14px; /* Adjust button font size */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly scale up button on hover */
+}
+
+.form-icon {
+    position: absolute;
+    left: 15px; /* Adjust the left position for proper alignment */
+    top: 75%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none; /* Prevent interaction with the icon */
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="subject"],
+.form-group textarea {
+    padding-left: 45px; /* Increased padding to accommodate the icon */
+    padding-right: 15px; /* Optional: Add padding to the right for consistency */
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Optional: Add focus effect to enhance user experience */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="subject"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+}
+
+
+/* Footer Styles */
+.footer {
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    animation: fadeIn 2s ease-out;
+    text-transform: uppercase; /* Make text uppercase */
+    text-align: center; /* Center the text */
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Slightly larger font size */
+    font-weight: 600; /* Make text bolder */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #007bff;
+    text-transform: uppercase; /* Make text uppercase */
+    font-weight: 500; /* Slightly bolder text */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer hr {
+    border-top: 2px solid #ddd; /* Make the horizontal line more prominent */
+    margin: 1rem 0; /* Add some margin */
+}
+
+.footer .social-icons a {
+    color: #007bff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+#footer {
+    position: relative;
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 20px 0; /* Padding for better spacing */
+    text-transform: uppercase; /* Make text uppercase */
+}
+
+#footer .text-muted {
+    font-size: 16px; /* Increase font size */
+    font-weight: 500; /* Slightly bolder text */
+    text-transform: uppercase; /* Make text uppercase */
+}
+
+#footer hr {
+    border-top: 2px solid #dee2e6; /* Make the horizontal line more prominent */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonHover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Map Container Styles */
+.map-container {
+    margin: 50px 0;
+}
+
+.map-container h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for text depth */
+}
+
+.map-container .embed-responsive {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+}
+
+/* Sign-Up Modal Styles */
+#signupModal .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+    transform: translateZ(20px); /* 3D Translation */
+}
+
+#signupModal .modal-header {
+    border-bottom: none;
+}
+
+#signupModal .modal-body {
+    padding: 20px;
+}
+
+#signupModal .form-group label {
+    font-weight: bold;
+    text-transform: none; /* Remove uppercase transform for labels */
+}
+
+#signupModal .form-control {
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
+}

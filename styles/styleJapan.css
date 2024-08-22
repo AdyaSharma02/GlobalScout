@@ -1,0 +1,445 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Destination Details Styling */
+.destination-details {
+    padding: 40px 0;
+}
+
+.destination-details h1, .destination-details h2 {
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 3D Effect */
+    color: #333; /* Darker color for more contrast */
+}
+
+.destination-details p {
+    font-size: 20px;
+    margin: 20px 0;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Slight 3D Effect */
+    color: #555; /* Slightly lighter color for better readability */
+}
+
+/* Additional Styling for Smart and Attractive Look */
+h1, p {
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition effects */
+}
+
+h1:hover, p:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    width: 1200px; /* Set a fixed width closer to a square ratio */
+    height: 600px; /* Set a fixed height closer to a square ratio */
+    overflow: hidden; /* Hide any overflow */
+    background-color: #f0f0f0; /* Optional: add a background color */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.slide {
+    display: none;
+    width: 100%; /* Make slides take the full width of the container */
+    height: 100%; /* Make slides take the full height of the container */
+    position: absolute; /* Position slides absolutely within the container */
+    top: 0;
+    left: 0;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the slide area */
+}
+
+.details-content {
+    margin-top: 40px;
+}
+
+/* Places Container Styling */
+.places-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.places-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 0 20px; /* Added padding to give some space between the arrows and cards */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.5rem; /* Reduced size */
+    color: #333;
+    padding: 5px; /* Adjusted padding for better click area */
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 50%; /* Makes the arrows rounder */
+    background-color: rgba(255, 255, 255, 0.7); /* Translucent background */
+    border: none; /* Remove any border */
+    outline: none; /* Remove focus outline */
+}
+
+.arrow:hover {
+    background-color: white; /* Slightly darker translucent background on hover */
+}
+
+.arrow:focus,
+.arrow:active {
+    border: none; /* Ensure no border on focus or active state */
+    outline: none; /* Remove focus outline */
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+/* Place Card Styling */
+.place-card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 10px;
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin: 10px;
+    min-width: 220px; /* Increased min-width */
+    max-width: 220px; /* Increased max-width */
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for a more professional look */
+}
+
+.place-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.place-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.place-description {
+    font-size: 17px;
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 25px;
+    box-sizing: border-box;
+    transition: display 0.3s ease-in-out;
+}
+
+.place-card:hover .place-description {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.place-card:hover .place-image {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/* Itinerary Section */
+.itinerary {
+    padding: 20px 10%; /* Adjust padding for better fit on smaller screens */
+    text-align: center;
+    font-size: 18px;
+    color: #2c3e50;
+    background: #f4f7f9; /* Light elegant background color */
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    filter: none; /* Ensure no blur effect is applied */
+}
+
+.itinerary h2 {
+    font-weight: 700;
+    font-size: 32px; /* Adjust font size for better fit on smaller screens */
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    margin: 40px auto;
+    width: 90%; /* Adjust width for better fit on smaller screens */
+    max-width: 800px;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 15px; /* Adjust padding for better fit on smaller screens */
+    font-size: 18px; /* Adjust font size for better fit on smaller screens */
+    font-weight: 500;
+    background: #0892d0;
+    color: #ecf0f1;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.accordion li label:hover {
+    background: #52b3de;
+    transform: scale(1.02); /* Slight scale-up on hover */
+}
+
+label::after {
+    content: '+';
+    font-size: 28px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+    background: #ecf0f1;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+    border-radius: 0 0 4px 4px;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+    max-height: 600px;
+    padding: 20px 20px;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+    transform: rotate(135deg);
+}
+
+.itinerary .email-signup {
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+
+.itinerary small {
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+.itinerary:hover,
+.itinerary h2:hover,
+.itinerary .email-signup:hover,
+.accordion .content:hover {
+    color: inherit;
+    filter: none; /* Ensure no blur or unwanted effects are applied */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .itinerary {
+        padding: 20px 5%;
+    }
+
+    .itinerary h2 {
+        font-size: 28px;
+    }
+
+    .accordion {
+        width: 95%;
+    }
+
+    .accordion li label {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .accordion .content {
+        padding: 0 15px;
+    }
+
+    .accordion input[type="radio"]:checked + label + .content {
+        padding: 15px 15px;
+    }
+
+    .accordion input[type="radio"]:checked + label::after {
+        right: 15px;
+    }
+
+    label::after {
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .itinerary {
+        padding: 15px 5%;
+    }
+
+    .itinerary h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .accordion li label {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .accordion .content {
+        padding: 0 10px;
+    }
+
+    .accordion input[type="radio"]:checked + label + .content {
+        padding: 10px 10px;
+    }
+
+    .accordion input[type="radio"]:checked + label::after {
+        right: 10px;
+    }
+
+    label::after {
+        right: 10px;
+    }
+}
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: black; /* Slightly lighter dark background for better contrast */
+    color: #f5f5f5; /* Light grey text color for better readability */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #444; /* Subtle top border for separation */
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px; /* Increased gap for better spacing */
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1;
+    max-width: 200px; /* Limit width for better alignment */
+}
+
+.social-media h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12; /* Highlight color for the heading */
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #f5f5f5;
+    font-size: 28px; /* Slightly larger icons for better visibility */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f39c12;
+}
+
+.about-footer {
+    flex: 2;
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.about-footer h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.about-footer p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0; /* Slightly lighter text color for paragraphs */
+}
+
+.contact-footer {
+    flex: 1;
+    max-width: 300px; /* Limit width for better alignment */
+}
+
+.contact-footer h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.contact-footer p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.footer-copyright {
+    margin-top: 1px;
+    font-size: 15px;
+    color: #888; /* Subtle color for copyright text */
+}
+
+.footer-copyright p {
+    margin: 0;
+}
