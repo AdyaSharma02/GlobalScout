@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Global Scout</title>
+    <link rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        #feedback h2 {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+            transform: rotateX(5deg) rotateY(5deg); /* Slight rotation for 3D effect */
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .rating-box {
+            display: inline-block;
+            padding: 2px; /* Increased padding for larger clickable area */
+            border: 2px solid #ced4da; /* Slightly thicker border */
+            border-radius: 50%; /* Circle shape for a polished look */
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            width: 50px; /* Increase size */
+            height: 50px; /* Increase size */
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        .rating-box input[type="radio"] {
+            display: none; /* Hide radio buttons */
+        }
+
+        .rating-box label {
+            font-size: 32px; /* Larger font size for emojis */
+            display: block;
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .rating-box:hover {
+            background-color: #e9ecef;
+            border-color: #007bff;
+            transform: translateY(-5px); /* Slight lift for 3D effect */
+        }
+
+        .rating-box:hover label {
+            color: black; /* Change color on hover */
+        }
+
+        .collage-img {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .collage-img:hover {
+            transform: scale(1.05) rotateZ(1deg); /* Scale up and slight rotation */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Styles */
+        .footer {
+            padding: 2rem 1rem;
+            background-color: #f8f9fa;
+            animation: fadeIn 2s ease-out;
+            text-transform: uppercase; /* Make text uppercase */
+            text-align: center; /* Center the text */
+        }
+
+        .footer h5 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem; /* Slightly larger font size */
+            font-weight: 600; /* Make text bolder */
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-transform: uppercase; /* Make text uppercase */
+            font-weight: 500; /* Slightly bolder text */
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer hr {
+            border-top: 2px solid #ddd; /* Make the horizontal line more prominent */
+            margin: 1rem 0; /* Add some margin */
+        }
+
+        .footer .social-icons a {
+            color: #007bff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        #footer {
+            position: relative;
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 20px 0; /* Padding for better spacing */
+            text-transform: uppercase; /* Make text uppercase */
+        }
+
+        #footer .text-muted {
+            font-size: 16px; /* Increase font size */
+            font-weight: 500; /* Slightly bolder text */
+            text-transform: uppercase; /* Make text uppercase */
+        }
+
+        #footer hr {
+            border-top: 2px solid #dee2e6; /* Make the horizontal line more prominent */
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes buttonHover {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Sign-Up Modal Styles */
+        #signupModal .modal-content {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for 3D effect */
+            transform: translateZ(20px); /* 3D Translation */
+        }
+
+        #signupModal .modal-header {
+            border-bottom: none;
+        }
+
+        #signupModal .modal-body {
+            padding: 20px;
+        }
+
+        #signupModal .form-group label {
+            font-weight: bold;
+            text-transform: none; /* Remove uppercase transform for labels */
+        }
+
+        #signupModal .form-control {
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/feedback1" style="font-size: 46px; font-weight: bold;"><i>GLOBAL SCOUT</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><i class="bi bi-house"></i> HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about1"><i class="bi bi-person"></i> ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact1"><i class="bi bi-envelope"></i> CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Feedback Form Section -->
+    <section id="feedback" class="container mt-5">
+        <h2 class="text-center">We Value Your Feedback</h2>
+        <p class="text-center">Please share your thoughts and suggestions about your experience with Global Scout.</p>
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card p-4">
+                    <form action="/submit-feedback" method="post">
+                        <div class="form-group">
+                            <label for="feedback-type">Feedback Type</label>
+                            <select class="form-control" id="feedback-type" name="feedbackType" required>
+                                <option>General Feedback</option>
+                                <option>Website Issues</option>
+                                <option>Service Experience</option>
+                                <option>Suggestions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                        </div>
+                         <div class="form-group" required>
+                            <label for="rating">Rate Your Overall Experience</label>
+                            <div id="rating" class="d-flex justify-content-between">
+                                <div class="rating-box">
+                                    <input type="radio" name="rating" id="rate-1" value="1">
+                                    <label for="rate-1" class="bi bi-emoji-frown"></label>
+                                </div>
+                                <div class="rating-box">
+                                    <input type="radio" name="rating" id="rate-2" value="2">
+                                    <label for="rate-2" class="bi bi-emoji-neutral"></label>
+                                </div>
+                                <div class="rating-box">
+                                    <input type="radio" name="rating" id="rate-3" value="3">
+                                    <label for="rate-3" class="bi bi-emoji-smile"></label>
+                                </div>
+                                <div class="rating-box">
+                                    <input type="radio" name="rating" id="rate-4" value="4">
+                                    <label for="rate-4" class="bi bi-emoji-heart-eyes"></label>
+                                </div>
+                                <div class="rating-box">
+                                    <input type="radio" name="rating" id="rate-5" value="5">
+                                    <label for="rate-5" class="bi bi-emoji-laughing"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </form>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/allfeedback" class="btn btn-secondary">View All Feedback</a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img src="styles/images/collage.jpg" alt="Feedback Collage" class="img-fluid collage-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer" class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <hr class="mt-4 w-100">
+                <div class="col-12 text-center">
+                    <span class="text-muted">GLOBAL SCOUT &copy; 2024. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

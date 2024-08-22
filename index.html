@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index - Global Scout</title>
+    <link rel="stylesheet" href="styles/styleIndex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/" style="font-size: 46px; font-weight: bold;"><i>Global Scout</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about1"><i class="bi bi-person"></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact1"><i class="bi bi-envelope"></i> Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/feedback1"><i class="bi bi-chat-dots"></i> Feedback</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal"><i class="bi bi-person-circle"></i> Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">
+                        <i class="fas fa-lock"></i> Log In
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image-container">
+                <div class="hero-image"></div>
+            </div>
+            <h1>Greetings! Dreaming of your next getaway?</h1>
+            <p>Welcome, fellow travelers! Are you ready to explore the world? Let us be your guide to creating unforgettable adventures.</p>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search destinations...">
+                <button onclick="searchDestination()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <h2>Choose Your Destination</h2>
+        <div class="destination-grid">
+            <div class="destination" onclick="promptSignIn('Japan')">
+                <img src="styles/images/japan/japan.jpg" alt="Japan">
+                <h3>Japan</h3>
+            </div>
+            <div class="destination" onclick="promptSignIn('Vietnam')">
+                <img src="styles/images/vietnam/vietnam.avif" alt="Vietnam">
+                <h3>Vietnam</h3>
+            </div>
+            <div class="destination" onclick="promptSignIn('South Korea')">
+                <img src="styles/images/korea/korea.jpg" alt="South Korea">
+                <h3>South Korea</h3>
+            </div>
+            <div class="destination" onclick="promptSignIn('Indonesia')">
+                <img src="styles/images/indonesia/indonesia.jpg" alt="Indonesia">
+                <h3>Indonesia</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="benefits-container">
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-brain"></i> 🤖
+                </div>
+                <h3>AI Integration</h3>
+                <p>Get personalized itinerary suggestions powered by AI to make your travel planning effortless and tailored to your preferences.</p>
+            </div>
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-clock"></i> ⏰
+                </div>
+                <h3>Time Saving</h3>
+                <p>Save time and effort with our expertly curated travel plans, ensuring you make the most of your trip without the hassle of planning.</p>
+            </div>
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-gem"></i> 💎
+                </div>
+                <h3>Hidden Gems</h3>
+                <p>Discover hidden gems and must-see places recommended just for you, making your travel experience unique and unforgettable.</p>
+            </div>
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-headset"></i> 🎧
+                </div>
+                <h3>24/7 Customer Support</h3>
+                <p>Enjoy peace of mind with our 24/7 customer support, ready to assist you with any inquiries or issues during your travels.</p>
+            </div>
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-handshake"></i> 🤝
+                </div>
+                <h3>Trusted Partners</h3>
+                <p>Travel confidently with our trusted partners, ensuring quality service and memorable experiences at every destination.</p>
+            </div>
+            <div class="benefit">
+                <div class="icon">
+                    <i class="fas fa-dollar-sign"></i> 💰
+                </div>
+                <h3>Affordable Prices</h3>
+                <p>Experience great value for your money with our competitive pricing, offering exceptional travel experiences without breaking the bank.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get the latest travel news, tips, and deals straight to your inbox.</p>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <section id="footer" class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <hr class="mt-4 w-100">
+                <div class="col-12 text-center">
+                    <span class="text-muted">GLOBAL SCOUT &copy; 2024. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Live Chat -->
+            <div class="live-chat">
+                <button class="live-chat-button" onclick="toggleChatWindow()">💬</button>
+            </div>
+
+            <!-- Chatbox -->
+            <div class="chatbox" id="chatbox">
+                <div class="messages" id="messages"></div>
+                <div class="input-group">
+                    <input type="text" id="userInput" placeholder="Type a message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+    </section>
+
+    <!-- Sign Up Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/signup" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="password">Password</label>
+                                <div class="password-container">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                    <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Log In Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/login" method="POST">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="loginPassword">Password</label>
+                                <div class="password-container">
+                                    <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter Password" required>
+                                    <i class="fas fa-eye toggle-password" onclick="toggleLoginPasswordVisibility()"></i>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function promptSignIn(destination) {
+            alert(`Please sign in to view information about ${destination}.`);
+            $('#signupModal').modal('show');
+        }
+
+        // Function to toggle password visibility
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.querySelector('.toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+
+        function toggleChatWindow() {
+            const chatbox = document.getElementById('chatbox');
+            if (chatbox.style.display === 'block') {
+                chatbox.style.display = 'none';
+            } else {
+                chatbox.style.display = 'block';
+                document.getElementById('userInput').focus(); // Focus on input when chatbox opens
+            }
+        }
+    
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (!userInput) return;
+        
+            const messagesDiv = document.getElementById('messages');
+        
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user';
+            userMessageDiv.textContent = userInput;
+            messagesDiv.appendChild(userMessageDiv);
+        
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+            // Send message to the chatbox backend
+            const response = await fetch('http://localhost:5000/chat', { // Updated port
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput }),
+            });
+        
+            const data = await response.json();
+        
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot';
+            botMessageDiv.innerHTML = data.response; // Using innerHTML to render formatted response
+            messagesDiv.appendChild(botMessageDiv);
+        
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+            document.getElementById('userInput').value = '';
+        }
+        
+        // Array of destinations available on the page
+        const destinations = ['japan', 'vietnam', 'south korea', 'indonesia'];
+
+        function promptSignIn(destination) {
+            alert(`Please sign in to view information about ${destination}.`);
+            $('#signupModal').modal('show');
+        }
+
+        function searchDestination() {
+            const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (destinations.includes(searchInput)) {
+                promptSignIn(searchInput.charAt(0).toUpperCase() + searchInput.slice(1));
+            } else {
+                alert('The destination you searched for is currently not available. We are continuously working to add more destinations. Thank you for your understanding.');
+            }
+        }
+
+        // Function to toggle login password visibility
+        function toggleLoginPasswordVisibility() {
+            const passwordField = document.getElementById('loginPassword');
+            const eyeIcon = document.querySelector('#loginModal .toggle-password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+</script>
+    </script>
+</body>
+</html>
